@@ -39,4 +39,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Netifly
 ## Deploy on Vercel
 
-Check out  [Next.js deployment documentation](https://nextjs.org/docs/deployment) for live.
+Check out  [https://nextjs-web3-nfts-test.vercel.app/](https://nextjs-web3-nfts-test.vercel.app/) for live.
