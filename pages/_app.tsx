@@ -13,15 +13,12 @@ import {
   configureChains,
 } from 'wagmi'
 
-import { infuraProvider } from 'wagmi/providers/infura'
 import { publicProvider } from 'wagmi/providers/public'
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
 import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
 
-// Configure chains & providers with the Infura provider.
-// Provider is Infura (infura.io)
+// Configure chains & providers.
 const { chains, provider, webSocketProvider } = configureChains(defaultChains, [
-  infuraProvider({ apiKey: 'yourInfuraApiKey' }),
   publicProvider(),
 ])
 
