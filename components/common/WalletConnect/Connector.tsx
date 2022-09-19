@@ -15,8 +15,7 @@ const Connector = (props: { onClose: () => void }) => {
   const { onClose } = props;
   const toast = useToast()
 
-  const { connect, connectors, error, isLoading, pendingConnector } =
-    useConnect();
+  const { connect, connectors, error, isLoading, pendingConnector } = useConnect();
 
   //Connect wallet action
   const handleConnect = (connector: any) => {
@@ -28,17 +27,19 @@ const Connector = (props: { onClose: () => void }) => {
 
   //Display the errors when connect wallet
   useEffect(() => {
-    if (error) {
-      toast({
-        title: error.name,
-        description: error.message,
-        status: 'error',
-        duration: 9000,
-        isClosable: true,
-        variant: 'left-accent',
-        position: 'top-right'
-      })
+    if (!error) {
+      return
     }
+    toast({
+      title: error.name,
+      description: error.message,
+      status: 'error',
+      duration: 9000,
+      isClosable: true,
+      variant: 'left-accent',
+      position: 'top-right'
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [error])
 
   return (

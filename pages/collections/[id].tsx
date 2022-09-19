@@ -48,6 +48,10 @@ const initCollectionMetadata: ICollectionMetadata = {
 const CollectionDetail: NextPage = () => {
   const router = useRouter();
   const { id } = router.query;
+
+  const dividerColor =useColorModeValue('gray.100', 'gray.700');
+  const titleColor = useColorModeValue('gray.500', 'gray.300');
+
   const [collection, setCollection] = useState<ICollection>(initCollection);
   const [metadata, setMetadata] = useState<ICollectionMetadata>(initCollectionMetadata);
 
@@ -84,28 +88,17 @@ const CollectionDetail: NextPage = () => {
                 />
               </Flex>
               <Stack spacing={5}>
-                <Text
-                  textTransform={'uppercase'}
-                  color={'blue.400'}
-                  fontWeight={600}
-                  fontSize={'sm'}
-                  bg={useColorModeValue('blue.50', 'blue.900')}
-                  p={2}
-                  alignSelf={'flex-start'}
-                  rounded={'md'}>
-                  CryptoPunks
-                </Text>
                 <Heading as='h3' size='lg'>{metadata?.name}</Heading>
                 <Stack
                   spacing={2}
                   divider={
                     <StackDivider
-                      borderColor={useColorModeValue('gray.100', 'gray.700')}
+                      borderColor={dividerColor}
                     />
                   }>
                   <Text
                     fontSize={'md'}
-                    color={useColorModeValue('gray.500', 'gray.300')}
+                    color={titleColor}
                     fontWeight={'600'}
                   >
                     Details
@@ -122,7 +115,7 @@ const CollectionDetail: NextPage = () => {
                           }}
                           href={`https://etherscan.io/address/${collection?.token_address}`}
                           isExternal
-                          color={useColorModeValue('blue.500', 'blue.300')}>
+                         >
                           {shortAddr(collection?.token_address)}
                         </Link>
                       </Flex>
@@ -151,12 +144,12 @@ const CollectionDetail: NextPage = () => {
                   spacing={2}
                   divider={
                     <StackDivider
-                      borderColor={useColorModeValue('gray.100', 'gray.700')}
+                      borderColor={dividerColor}
                     />
                   }>
                   <Text
                     fontSize={'md'}
-                    color={useColorModeValue('gray.500', 'gray.300')}
+                    color={titleColor}
                     fontWeight={'600'}
                   >
                     Attributes
@@ -173,12 +166,12 @@ const CollectionDetail: NextPage = () => {
                   spacing={2}
                   divider={
                     <StackDivider
-                      borderColor={useColorModeValue('gray.100', 'gray.700')}
+                      borderColor={dividerColor}
                     />
                   }>
                   <Text
                     fontSize={'md'}
-                    color={useColorModeValue('gray.500', 'gray.300')}
+                    color={titleColor}
                     fontWeight={'600'}
                   >
                     Type
